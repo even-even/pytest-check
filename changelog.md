@@ -43,6 +43,13 @@ TEMPLATE_END
 
 -->
 
+## [2.9.1] - 31-July-2026
+
+### Fixed
+
+- Fix [#173: An issue with pytest-reportlog](https://github.com/okken/pytest-check/issues/173) thanks to a suggestion from MV Seotlo
+  - also the resulting code is a bit cleaner of a solution for the pseudo-traceback code.
+
 ## [2.9.0] - 19-April-2026
 
 ### Highlights

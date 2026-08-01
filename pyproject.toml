@@ -4,7 +4,7 @@ authors = [{ name = "Brian Okken" }]
 readme = "README.md"
 license = { file = "LICENSE.txt" }
 description = "A pytest plugin that allows multiple failures per test."
-version = "2.9.0"
+version = "2.9.1"
 requires-python = ">=3.9"
 classifiers = [
   'Development Status :: 5 - Production/Stable',
@@ -40,7 +40,12 @@ build-backend = "hatchling.build"
 dev = ["tox", "tox-uv", "build"]
 
 [tool.ty.src]
-exclude = ["examples/test_example_mypy_fail.py"]
+# These example files intentionally include type-invalid code to exercise
+# runtime failure/traceback behavior in plugin tests.
+exclude = [
+  "examples/test_example_mypy_fail.py",
+  "examples/test_example_multi_check_raises.py",
+]
 
 [tool.ty.terminal]
 error-on-warning = true
