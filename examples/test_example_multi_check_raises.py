@@ -1,4 +1,6 @@
 def test_multi_check_raises(check):
+    # Intentionally type-invalid indexing to raise exceptions and exercise
+    # multi-failure aggregation/traceback output behavior.
     lst_1 = []
     with check:
         assert lst_1["N/A"] == "Fail 1"
