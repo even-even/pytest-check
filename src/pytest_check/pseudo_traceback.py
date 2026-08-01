@@ -136,8 +136,8 @@ def _build_single_line_trace_str(tb: Iterable[str] | None, color: bool) -> str:
     if tb:
         tb_lines = list(tb)
         tb_frames = []
-        for line in tb_lines:
-            frame = _line_to_trace_frame(line)
+        for raw_line in tb_lines:
+            frame = _line_to_trace_frame(raw_line)
             if frame:
                 tb_frames.append(frame)
 
